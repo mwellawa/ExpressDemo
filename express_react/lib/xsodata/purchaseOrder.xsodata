@@ -1,0 +1,12 @@
+service {
+
+    "ExpressDemo.db::model.PurchaseOrderHeader"
+	  as "POHeader" navigates ("Items" as "POItem");
+
+	"ExpressDemo.db::model.PurchaseOrderItem"
+	  as "POItem";
+
+	association "Items" principal  "POHeader"("po_number")
+	multiplicity "1" dependent "POItem"("po_number.po_number") multiplicity "*";
+	
+}

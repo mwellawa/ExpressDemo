@@ -1,0 +1,27 @@
+namespace ExpressDemo.db;
+
+context model {
+	
+	type AmountT	: Decimal(15, 2);
+	type Quantity	: Decimal (15, 2); 
+	
+    entity PurchaseOrderHeader {
+        key id          	:	Integer generated always as identity(start with 1000000 increment by 1 minvalue 1000000 maxvalue 9999999);
+        key po_number		:	Integer;
+            net_amount		:	AmountT;
+            tax_amount		:	AmountT;
+            total_amount	:	AmountT;
+    };
+    
+    entity PurchaseOrderItem {
+        key id          	:	Integer generated always as identity(start with 1000000 increment by 1 minvalue 1000000 maxvalue 9999999);
+        key po_number     	:	association[*, 1..1] to PurchaseOrderHeader { po_number };
+        key po_item			:   Integer;
+        	product			:	String(30);
+        	quantity		:	Quantity;
+            net_amount		:	AmountT;
+            tax_amount		:	AmountT;
+            total_amount	:	AmountT;
+    };    
+    
+};

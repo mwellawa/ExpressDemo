@@ -1,0 +1,40 @@
+ID: ExpressDemo
+_schema-version: '2.0'
+version: 0.0.1
+modules:
+  - name: db
+    type: hdb
+    path: db
+    requires:
+      - name: UAA-service
+  - name: web
+    type: html5
+    path: web
+    requires:
+      - name: express_react_api
+        group: destinations
+        properties:
+          name: express_react_backend
+          url: '~{express_react_api_url}'
+          forwardAuthToken: true
+      - name: UAA-service
+  - name: express_react
+    type: nodejs
+    path: express_react
+    provides:
+      - name: express_react_api
+        properties:
+          express_react_api_url: '${default-url}'
+    requires:
+      - name: UAA-service
+      - name: hdi_db
+resources:
+  - name: hdi_db
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: UAA-service
+    type: com.sap.xs.uaa-space
+    description: UAA-service
+    parameters:
+      config-path: ./xs-security.json

@@ -1,0 +1,15 @@
+{
+	"welcomeFile": "index.html",
+	"authenticationMethod": "route",
+	"routes": [{
+		"source": "(.*)(.xsodata)",
+		"destination": "express_react_backend",
+		"csrfProtection": true,
+		"authenticationType": "xsuaa"
+	}, {
+		"source": "/node(.*)",
+		"destination": "express_react_backend",
+		"csrfProtection": true,
+		"authenticationType": "xsuaa"
+	}]
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<title>web</title>
+ 
+<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+	id="sap-ui-bootstrap" data-sap-ui-libs="sap.m"
+	data-sap-ui-theme="sap_bluecrystal">
+		</script>
+ 
+<script>
+	// create the button instance
+	var myButton = new sap.m.Button("btn");
+
+	// set properties, e.g. the text (there is also a shorter way of setting several properties)
+	myButton.setText("Hello World!");
+
+	// attach an action to the button's "press" event (use jQuery to fade out the button)
+	myButton.attachPress(function(){$("#btn").fadeOut()});
+
+	// place the button into the HTML element defined below
+	myButton.placeAt("uiArea");
+	</script>
+</head>
+<body class="sapUiBody">
+	 This is where you place the UI5 button 
+	<div id="uiArea"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<html>-->
+ 
+<!--<head>-->
+<!--  <meta charset="utf-8">-->
+<!--  <title>React! React! React!</title>-->
+<!--  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>-->
+<!--  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>-->
+<!--  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>-->
+ 
+<!--  <style>-->
+<!--    #container {-->
+<!--      padding: 50px;-->
+<!--      background-color: #EEE;-->
+<!--    }-->
+<!--    #container h1 {-->
+<!--      font-size: 144px;-->
+<!--      font-family: sans-serif;-->
+<!--      color: #0080a8;-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+ 
+<!--<body>-->
+<!--  <div id="container"></div>-->
+<!--  <script type="text/babel">-->
+<!--    var destination = document.querySelector("#container");-->
+ 
+<!--    ReactDOM.render(React.createElement(-->
+<!--      "h1",-->
+<!--      null,-->
+<!--      "Batman"-->
+<!--    ), destination);-->
+<!--  </script>-->
+<!--</body>-->
+ 
+<!--</html>-->
